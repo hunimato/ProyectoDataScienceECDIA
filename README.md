@@ -1,76 +1,78 @@
-# Market Basket Analysis — UK Retail (2010–2011)
+# CO₂ Emissions Prediction — Agro-food Sector (BID Countries)
 
-> Análisis exploratorio y de comportamiento de compra sobre 522.000 transacciones de un minorista del Reino Unido.
+> Análisis histórico y modelado predictivo de emisiones de CO₂ del sector agro-alimentario en países miembros del BID, con proyecciones hacia 2030.
 
-**Equipo:** Hugo Martínez · Jeasmine Nahui · Leticia Colombo · Valentina Ghan
-**Institución:** UTEC / ECDIA — Fundamentos de Programación para Ciencia de Datos e IA
-**Rama:** `/market-basket`
+**Equipo:** Hugo Martínez · Andrea Aranda · Yuri Biardo
+**Programa:** MISTI GTL AI Uruguay 2026
+**Rama:** `feature/co2-emissions`
 
 ---
 
 ## Descripción del proyecto
 
-Este proyecto analiza el comportamiento de compra de clientes de un comercio minorista del Reino Unido durante el período diciembre 2010 – diciembre 2011. El dataset contiene **522.065 transacciones** con 7 variables (número de factura, nombre del ítem, cantidad, fecha, precio, ID de cliente y país).
+Este proyecto analiza las emisiones de CO₂ asociadas al sistema agro-industrial y agro-alimentario en los países miembros del **Banco Interamericano de Desarrollo (BID)**. El dataset proviene de Kaggle y contiene información anual por país con desglose sectorial dentro de la cadena de valor agro-alimentaria.
 
-El foco está en identificar patrones de venta, tendencias temporales, y relaciones entre categorías de productos que permitan generar recomendaciones comerciales accionables.
+El horizonte de proyección elegido es **2030**, por su relevancia en los compromisos internacionales de sostenibilidad climática adoptados por los países de la región.
 
 ---
 
-## Preguntas clave respondidas
+## Objetivos
 
-- ¿Cuáles son los productos y categorías más vendidos?
-- ¿Qué explica el aumento del 60% en ventas en el último trimestre?
-- ¿Los clientes compran más o son más los que compran?
-- ¿Existen categorías de productos con comportamiento de compra similar?
-- ¿Hay patrones temporales (día, hora, mes) en las transacciones?
+- Explorar patrones históricos de emisiones de CO₂ agro-industrial por país y subsector
+- Identificar las variables más relevantes para predecir la trayectoria de emisiones
+- Evaluar la viabilidad de modelos predictivos con proyecciones a 2030
+- Proveer un marco analítico reproducible para monitoreo de sostenibilidad en países BID
+
+> Este trabajo es **exploratorio y predictivo**. No asume relaciones causales ni prescribe políticas públicas.
+
+---
+
+## Alcance del análisis
+
+| Parámetro | Detalle |
+|-----------|---------|
+| Países incluidos | Miembros del BID |
+| Período analizado | Últimos 10 años disponibles en el dataset |
+| Subsectores | Procesamiento de alimentos, manufactura de insumos, transporte agro |
+| Horizonte de proyección | 2030 |
+| Fuente del dataset | Kaggle (datos públicos FAO/FAOSTAT) |
 
 ---
 
 ## Estructura del análisis
 
-### Etapa I — Problemática y dataset
-- Descripción del dataset (7 variables, 522.065 filas)
-- Definición de 8 preguntas clave sobre comportamiento de compra
+### Exploración y preprocesamiento
+- Filtrado por países BID y últimos 10 años
+- Limpieza y estandarización de variables
+- Análisis de valores faltantes y consistencia temporal
 
-### Etapa II — Limpieza y preprocesamiento
-- Conversión de tipos y estandarización de formatos
-- Imputación de nulos en `CustomerID` (26%) con ID genérico 99999
-- Eliminación de devoluciones y transacciones no válidas
-- Categorización manual de productos en **25+ categorías** (reduciendo "Otros" a < 5%)
-- Creación de variables temporales: momento del día, momento del mes, trimestre
+### Análisis exploratorio
+- Patrones históricos de emisiones por país y subsector
+- Comparativas regionales entre países BID
+- Identificación de tendencias y outliers
 
-### Etapa III — Visualización y análisis
-- Evolución mensual y semanal de ventas, transacciones y clientes
-- Análisis de ticket promedio y diversidad de ítems por compra
-- Mapas de calor por día/hora y día/mes
-- Series de tiempo: descomposición, tests ADF/KPSS, ACF/PACF
-- Análisis de correspondencia múltiple (MCA) entre variables categóricas
-- Medidas de similitud entre categorías: Manhattan, Euclidiana, **Jaccard**
-- Dashboard interactivo con Dash + ngrok
+### Feature engineering
+- Selección y construcción de variables predictoras relevantes
+- Evaluación de la importancia de cada variable sobre las emisiones
 
-### Etapa IV — Resultados y recomendaciones
-- El crecimiento en Q4 se explica por **captación de nuevos clientes**, no por mayor gasto individual
-- La categoría **Papelería y Regalos** lidera el impacto en ingresos totales
-- Clientes "heavy users" identificados (IDs 12748 y 17841) con potencial mayorista
-- Similitudes fuertes detectadas: Papelería↔Bolsas (0.65), Ornamentos↔Decoración (0.72)
+### Modelado predictivo
+- Evaluación de modelos para proyección de emisiones
+- Proyecciones hacia el año 2030
+- Análisis de incertidumbre en las predicciones
 
 ---
 
-## Resultados destacados
+## Contexto y relevancia
 
-| Métrica | Valor |
-|---------|-------|
-| Filas post-limpieza | 475.171 (UK) |
-| Categorías creadas | 25+ |
-| Categoría "Otros" final | < 5% |
-| Período analizado | Dic 2010 – Nov 2011 |
-| País de foco | Reino Unido (93% del dataset) |
+Este trabajo se enmarca en la agenda climática internacional. El sector agro-alimentario es uno de los principales emisores de gases de efecto invernadero a nivel global, y los países de América Latina y el Caribe —mayoría miembros del BID— enfrentan el desafío de conciliar el desarrollo agropecuario con los compromisos de reducción de emisiones asumidos en acuerdos como el Acuerdo de París.
+
+Contar con modelos predictivos robustos y reproducibles es un insumo clave para organismos multilaterales, ministerios de agricultura y agencias de medio ambiente de la región.
 
 ---
 
-## 🛠️ Stack tecnológico
+## Stack tecnológico
 
-`pandas` · `numpy` · `matplotlib` · `seaborn` · `plotly` · `statsmodels` · `scipy` · `sklearn` · `prince` · `dash` · `networkx` · `swifter`
+`pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` · `plotly`
 
 ---
 
@@ -78,17 +80,15 @@ El foco está en identificar patrones de venta, tendencias temporales, y relacio
 
 | Archivo | Descripción |
 |---------|-------------|
-| `grupo_3.py` | Script principal con todas las etapas del análisis |
+| `MI_CO2__4_.ipynb` | Notebook principal con el análisis completo |
 
 ---
 
 ## Cómo ejecutar
 
-El script fue desarrollado en **Google Colab**. Para ejecutarlo:
+El notebook fue desarrollado en **Google Colab**.
 
-1. Subir el dataset `AssignmentData.csv` a Google Drive en `/My Drive/Notebooks/`
-2. Abrir el archivo en Colab
-3. Ejecutar primero el bloque de **Funciones e Imports**
-4. Continuar con las etapas en orden
-
-> El dashboard interactivo (Dash + ngrok) requiere un authtoken de ngrok válido.
+1. Descargar el dataset desde [Kaggle](https://www.kaggle.com/) (CO2 emissions agro-food)
+2. Subir el archivo a Google Drive
+3. Abrir `MI_CO2__4_.ipynb` en Colab y ajustar la ruta del dataset
+4. Ejecutar las celdas en orden
