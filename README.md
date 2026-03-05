@@ -1,81 +1,94 @@
-# Proyectos de Data Science & Machine Learning
+# Market Basket Analysis — UK Retail (2010–2011)
 
-**Hugo Martínez Tornaria**
-Nutricionista clínico · Especialista en Telemedicina · Docente universitario
-Especialización en Ciencia de Datos e IA — UTEC / ECDIA
-
----
-
-## Estructura del repositorio
-
-Este repositorio contiene **3 proyectos independientes**, cada uno en su propia rama:
-
-| Rama | Proyecto | Archivo |
-|------|----------|---------|
-| [`/market-basket`](#-rama-featuremarket-basket) | Market Basket Analysis — UK Retail | `grupo_3.py` |
-| [`/co2-emissions`](#-rama-featureco2-emissions) | Predicción CO₂ Agro-alimentario (BID) | `MI_CO2__4_.ipynb` |
-| [`/no-show-prediction`](#-rama-featureno-show-prediction) | Predicción de Inasistencias Médicas | `Hugo_Martinez_...ipynb` |
-
----
-
-##  Rama: `feature/market-basket`
-### Market Basket Analysis — UK Retail (2010–2011)
+> Análisis exploratorio y de comportamiento de compra sobre 522.000 transacciones de un minorista del Reino Unido.
 
 **Equipo:** Hugo Martínez · Jeasmine Nahui · Leticia Colombo · Valentina Ghan
-**Contexto:** Fundamentos de Programación para Ciencia de Datos e IA — UTEC/ECDIA
-
-Análisis exploratorio completo sobre **522.065 transacciones** de un minorista del Reino Unido (dic 2010 – dic 2011). El objetivo fue identificar patrones de venta, tendencias temporales y relaciones entre categorías de productos para generar recomendaciones comerciales accionables.
-
-**Lo más destacado:**
--  Limpieza de datos con imputación del 26% de nulos en `CustomerID`
--  Categorización manual de productos en **25+ categorías** (reduciendo "Otros" a < 5%)
--  El crecimiento del 60% en Q4 se explica por **captación de nuevos clientes**, no por mayor ticket promedio
--  Similitudes fuertes entre categorías detectadas con índice Jaccard: Papelería↔Bolsas (0.65), Ornamentos↔Decoración (0.72)
--  Dashboard interactivo con Dash + ngrok
-
-**Stack:** `pandas` · `numpy` · `matplotlib` · `seaborn` · `plotly` · `statsmodels` · `prince` · `dash` · `networkx`
+**Institución:** UTEC / ECDIA — Fundamentos de Programación para Ciencia de Datos e IA
+**Rama:** `/market-basket`
 
 ---
 
-## 🌱 Rama: `feature/co2-emissions`
-### CO₂ Emissions Prediction — Agro-food Sector (BID Countries)
+## Descripción del proyecto
 
-**Equipo:** Hugo Martínez · Andrea Aranda · Yuri Biardo
-**Contexto:** MISTI GTL AI Uruguay 2026
+Este proyecto analiza el comportamiento de compra de clientes de un comercio minorista del Reino Unido durante el período diciembre 2010 – diciembre 2011. El dataset contiene **522.065 transacciones** con 7 variables (número de factura, nombre del ítem, cantidad, fecha, precio, ID de cliente y país).
 
-Análisis y predicción de emisiones de CO₂ del sector agro-alimentario en países miembros del **Banco Interamericano de Desarrollo (BID)**, con proyecciones hacia **2030** alineadas a compromisos climáticos internacionales.
-
-**Lo más destacado:**
-- Datos filtrados a los últimos 10 años disponibles, solo países BID
-- Subsectores analizados: procesamiento de alimentos, manufactura de insumos, transporte agro
-- Identificación de tendencias históricas y variables predictoras de emisiones
-- Proyecciones a 2030 como insumo para organismos multilaterales y ministerios de la región
-- Enfoque exploratorio y predictivo — sin prescripción de políticas
-
-**Stack:** `pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` · `plotly`
+El foco está en identificar patrones de venta, tendencias temporales, y relaciones entre categorías de productos que permitan generar recomendaciones comerciales accionables.
 
 ---
 
-## 🏥 Rama: `feature/no-show-prediction`
-### Medical Appointment No-Show Prediction — XGBoost
+## Preguntas clave respondidas
 
-**Autor:** Hugo Martínez Tornaria
-**Contexto:** Examen — Automatización y Machine Learning, UTEC/ECDIA
-
-Modelo de **clasificación binaria** para predecir si un paciente faltará a su consulta médica, usando datos del sistema de salud de Vitória, Brasil (110.527 turnos, abril–junio 2016). Desbalance de clases: 80% asiste / 20% falta.
-
-**Lo más destacado:**
-- Feature engineering: `dias_espera`, `faltas_previas`, `turnos_previos`
-- Tratamiento riguroso de **data leakage** — punto central de la defensa ante tribunal
-- Modelo final: **XGBoost** con optimización de hiperparámetros
-- **ROC-AUC: 0.7516** sobre el conjunto de prueba
-- Aplicación clínica directa: gestión de agenda médica y reducción de tiempos muertos
-
-**Stack:** `pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` · `xgboost`
+- ¿Cuáles son los productos y categorías más vendidos?
+- ¿Qué explica el aumento del 60% en ventas en el último trimestre?
+- ¿Los clientes compran más o son más los que compran?
+- ¿Existen categorías de productos con comportamiento de compra similar?
+- ¿Hay patrones temporales (día, hora, mes) en las transacciones?
 
 ---
 
-## Autor
+## Estructura del análisis
 
-**Hugo Martínez Tornaria**
-- Especialización en Ciencia de Datos e IA — UTEC / ECDIA
+### Etapa I — Problemática y dataset
+- Descripción del dataset (7 variables, 522.065 filas)
+- Definición de 8 preguntas clave sobre comportamiento de compra
+
+### Etapa II — Limpieza y preprocesamiento
+- Conversión de tipos y estandarización de formatos
+- Imputación de nulos en `CustomerID` (26%) con ID genérico 99999
+- Eliminación de devoluciones y transacciones no válidas
+- Categorización manual de productos en **25+ categorías** (reduciendo "Otros" a < 5%)
+- Creación de variables temporales: momento del día, momento del mes, trimestre
+
+### Etapa III — Visualización y análisis
+- Evolución mensual y semanal de ventas, transacciones y clientes
+- Análisis de ticket promedio y diversidad de ítems por compra
+- Mapas de calor por día/hora y día/mes
+- Series de tiempo: descomposición, tests ADF/KPSS, ACF/PACF
+- Análisis de correspondencia múltiple (MCA) entre variables categóricas
+- Medidas de similitud entre categorías: Manhattan, Euclidiana, **Jaccard**
+- Dashboard interactivo con Dash + ngrok
+
+### Etapa IV — Resultados y recomendaciones
+- El crecimiento en Q4 se explica por **captación de nuevos clientes**, no por mayor gasto individual
+- La categoría **Papelería y Regalos** lidera el impacto en ingresos totales
+- Clientes "heavy users" identificados (IDs 12748 y 17841) con potencial mayorista
+- Similitudes fuertes detectadas: Papelería↔Bolsas (0.65), Ornamentos↔Decoración (0.72)
+
+---
+
+## Resultados destacados
+
+| Métrica | Valor |
+|---------|-------|
+| Filas post-limpieza | 475.171 (UK) |
+| Categorías creadas | 25+ |
+| Categoría "Otros" final | < 5% |
+| Período analizado | Dic 2010 – Nov 2011 |
+| País de foco | Reino Unido (93% del dataset) |
+
+---
+
+## 🛠️ Stack tecnológico
+
+`pandas` · `numpy` · `matplotlib` · `seaborn` · `plotly` · `statsmodels` · `scipy` · `sklearn` · `prince` · `dash` · `networkx` · `swifter`
+
+---
+
+## Archivo
+
+| Archivo | Descripción |
+|---------|-------------|
+| `grupo_3.py` | Script principal con todas las etapas del análisis |
+
+---
+
+## Cómo ejecutar
+
+El script fue desarrollado en **Google Colab**. Para ejecutarlo:
+
+1. Subir el dataset `AssignmentData.csv` a Google Drive en `/My Drive/Notebooks/`
+2. Abrir el archivo en Colab
+3. Ejecutar primero el bloque de **Funciones e Imports**
+4. Continuar con las etapas en orden
+
+> El dashboard interactivo (Dash + ngrok) requiere un authtoken de ngrok válido.
