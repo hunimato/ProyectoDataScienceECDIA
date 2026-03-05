@@ -78,7 +78,7 @@ El foco está en identificar patrones de venta, tendencias temporales, y relacio
 
 | Archivo | Descripción |
 |---------|-------------|
-| `grupo_3.py` | Script principal con todas las etapas del análisis |
+| `grupo_3.ipynb` | Script principal con todas las etapas del análisis |
 
 ---
 
