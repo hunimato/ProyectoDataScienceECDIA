@@ -4,7 +4,7 @@
 
 **Equipo:** Hugo Martínez · Jeasmine Nahui · Leticia Colombo · Valentina Ghan
 **Institución:** UTEC / ECDIA — Fundamentos de Programación para Ciencia de Datos e IA
-**Rama:** `feature/market-basket`
+**Rama:** `/market-basket`
 
 ---
 
