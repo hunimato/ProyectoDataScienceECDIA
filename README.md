@@ -4,7 +4,7 @@
 
 **Autor:** Hugo Martínez Tornaria
 **Curso:** Automatización y Machine Learning — UTEC / ECDIA
-**Rama:** `feature/no-show-prediction`
+**Rama:** `/no-show-prediction`
 
 ---
 
