@@ -1,8 +1,7 @@
 # Proyectos de Data Science & Machine Learning
 
 **Hugo Martínez Tornaria**
-Nutricionista clínico · Especialista en Telemedicina · Docente universitario
-Especialización en Ciencia de Datos e IA — UTEC / ECDIA
+Especialista en Telemedicina · Especialización en Ciencia de Datos e IA — UTEC / ECDIA
 
 ---
 
