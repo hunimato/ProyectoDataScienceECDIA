@@ -11,9 +11,9 @@ Este repositorio contiene **3 proyectos independientes**, cada uno en su propia 
 
 | Rama | Proyecto | Archivo |
 |------|----------|---------|
-| [`/market-basket`](#-rama-featuremarket-basket) | Market Basket Analysis — UK Retail | `grupo_3.ipynb` |
-| [`/co2-emissions`](#-rama-featureco2-emissions) | Predicción CO₂ Agro-alimentario (BID) | `MI_CO2__4_.ipynb` |
-| [`/no-show-prediction`](#-rama-featureno-show-prediction) | Predicción de Inasistencias Médicas | `Hugo_Martinez_...ipynb` |
+| [`/market-basket`](#market-basket) | Market Basket Analysis — UK Retail | `grupo_3.ipynb` |
+| [`/co2-emissions`](#co2-emissions) | Predicción CO₂ Agro-alimentario (BID) | `MI_CO2__4_.ipynb` |
+| [`/no-show-prediction`](#no-show-prediction) | Predicción de Inasistencias Médicas | `Hugo_Martinez_...ipynb` |
 
 ---
 
