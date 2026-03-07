@@ -95,7 +95,14 @@ El notebook fue desarrollado en **Google Colab**.
 
 ## Resultados principales
 
-MétricaValorModelo seleccionadoElasticNet (alpha=0.01, l1_ratio=0.8)R² en testMayor al de Random Forest y Gradient BoostingPeríodo de entrenamientoHasta 2015Período de evaluación2016–2020Horizonte de proyección2030
+| Métrica | Valor |
+|---------|-------|
+| Modelo seleccionado | ElasticNet (alpha=0.01, l1_ratio=0.8) |
+| R² en test | Mayor al de Random Forest y Gradient Boosting |
+| Período de entrenamiento | Hasta 2015 |
+| Período de evaluación | 2016–2020 |
+| Horizonte de proyección | 2030 |
+
 Hallazgos clave:
 
 Las emisiones agroindustriales en los países BID siguen patrones relativamente estables y estructurados una vez considerados los quiebres estructurales históricos.
