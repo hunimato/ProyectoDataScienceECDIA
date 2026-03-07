@@ -1,92 +1,80 @@
-# CO₂ Emissions Prediction — Agro-food Sector (BID Countries)
+# Proyectos de Data Science & Machine Learning
 
-> Análisis histórico y modelado predictivo de emisiones de CO₂ del sector agro-alimentario en países miembros del BID, con proyecciones hacia 2030.
+**Hugo Martínez Tornaria**
+Especialista en Telemedicina · Especialización en Ciencia de Datos e IA — UTEC / ECDIA
+
+---
+
+## Estructura del repositorio
+
+Este repositorio contiene **3 proyectos independientes**, cada uno en su propia rama:
+
+| Rama | Proyecto | Archivo |
+|------|----------|---------|
+| [`/market-basket`](#market-basket) | Market Basket Analysis — UK Retail | `grupo_3.ipynb` |
+| [`/co2-emissions`](#co2-emissions) | Predicción CO₂ Agro-alimentario (BID) | `MI_CO2__4_.ipynb` |
+| [`/no-show-prediction`](#no-show-prediction) | Predicción de Inasistencias Médicas | `Hugo_Martinez_...ipynb` |
+
+---
+
+## Rama: `feature/market-basket`
+### Market Basket Analysis — UK Retail (2010–2011)
+
+**Equipo:** Hugo Martínez · Jeasmine Nahui · Leticia Colombo · Valentina Ghan
+**Contexto:** Fundamentos de Programación para Ciencia de Datos e IA — UTEC/ECDIA
+
+Análisis exploratorio completo sobre **522.065 transacciones** de un minorista del Reino Unido (dic 2010 – dic 2011). El objetivo fue identificar patrones de venta, tendencias temporales y relaciones entre categorías de productos para generar recomendaciones comerciales accionables.
+
+**Lo más destacado:**
+- Limpieza de datos con imputación del 26% de nulos en `CustomerID`
+- Categorización manual de productos en **25+ categorías** (reduciendo "Otros" a < 5%)
+- El crecimiento del 60% en Q4 se explica por **captación de nuevos clientes**, no por mayor ticket promedio
+- Similitudes fuertes entre categorías detectadas con índice Jaccard: Papelería↔Bolsas (0.65), Ornamentos↔Decoración (0.72)
+- Dashboard interactivo con Dash + ngrok
+
+**Stack:** `pandas` · `numpy` · `matplotlib` · `seaborn` · `plotly` · `statsmodels` · `prince` · `dash` · `networkx`
+
+---
+
+## Rama: `feature/co2-emissions`
+### CO₂ Emissions Prediction — Agro-food Sector (BID Countries)
 
 **Equipo:** Hugo Martínez · Andrea Aranda · Yuri Biardo
-**Programa:** MISTI GTL AI Uruguay 2026
-**Rama:** `feature/co2-emissions`
+**Contexto:** MISTI GTL AI Uruguay 2026
+
+Análisis y predicción de emisiones de CO₂ del sector agro-alimentario en países miembros del **Banco Interamericano de Desarrollo (BID)**, con proyecciones hacia **2030** alineadas a compromisos climáticos internacionales.
+
+**Lo más destacado:**
+- Datos filtrados a los últimos 10 años disponibles, solo países BID
+- Subsectores analizados: procesamiento de alimentos, manufactura de insumos, transporte agro
+- Identificación de tendencias históricas y variables predictoras de emisiones
+- Proyecciones a 2030 como insumo para organismos multilaterales y ministerios de la región
+- Enfoque exploratorio y predictivo — sin prescripción de políticas
+
+**Stack:** `pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` · `plotly`
 
 ---
 
-## Descripción del proyecto
+## Rama: `feature/no-show-prediction`
+### Medical Appointment No-Show Prediction — XGBoost
 
-Este proyecto analiza las emisiones de CO₂ asociadas al sistema agro-industrial y agro-alimentario en los países miembros del **Banco Interamericano de Desarrollo (BID)**. El dataset proviene de Kaggle y contiene información anual por país con desglose sectorial dentro de la cadena de valor agro-alimentaria.
+**Autor:** Hugo Martínez Tornaria
+**Contexto:** Examen — Automatización y Machine Learning, UTEC/ECDIA
 
-El horizonte de proyección elegido es **2030**, por su relevancia en los compromisos internacionales de sostenibilidad climática adoptados por los países de la región.
+Modelo de **clasificación binaria** para predecir si un paciente faltará a su consulta médica, usando datos del sistema de salud de Vitória, Brasil (110.527 turnos, abril–junio 2016). Desbalance de clases: 80% asiste / 20% falta.
 
----
+**Lo más destacado:**
+- Feature engineering: `dias_espera`, `faltas_previas`, `turnos_previos`
+- Tratamiento riguroso de **data leakage** — punto central de la defensa ante tribunal
+- Modelo final: **XGBoost** con optimización de hiperparámetros
+- **ROC-AUC: 0.7516** sobre el conjunto de prueba
+- Aplicación clínica directa: gestión de agenda médica y reducción de tiempos muertos
 
-## Objetivos
-
-- Explorar patrones históricos de emisiones de CO₂ agro-industrial por país y subsector
-- Identificar las variables más relevantes para predecir la trayectoria de emisiones
-- Evaluar la viabilidad de modelos predictivos con proyecciones a 2030
-- Proveer un marco analítico reproducible para monitoreo de sostenibilidad en países BID
-
-> Este trabajo es **exploratorio y predictivo**. No asume relaciones causales ni prescribe políticas públicas.
-
----
-
-## Alcance del análisis
-
-| Parámetro | Detalle |
-|-----------|---------|
-| Países incluidos | Miembros del BID |
-| Período analizado | Últimos 10 años disponibles en el dataset |
-| Subsectores | Procesamiento de alimentos, manufactura de insumos, transporte agro |
-| Horizonte de proyección | 2030 |
-| Fuente del dataset | Kaggle (datos públicos FAO/FAOSTAT) |
+**Stack:** `pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` · `xgboost`
 
 ---
 
-## Estructura del análisis
-
-### Exploración y preprocesamiento
-- Filtrado por países BID y últimos 10 años
-- Limpieza y estandarización de variables
-- Análisis de valores faltantes y consistencia temporal
-
-### Análisis exploratorio
-- Patrones históricos de emisiones por país y subsector
-- Comparativas regionales entre países BID
-- Identificación de tendencias y outliers
-
-### Feature engineering
-- Selección y construcción de variables predictoras relevantes
-- Evaluación de la importancia de cada variable sobre las emisiones
-
-### Modelado predictivo
-- Evaluación de modelos para proyección de emisiones
-- Proyecciones hacia el año 2030
-- Análisis de incertidumbre en las predicciones
-
----
-
-## Contexto y relevancia
-
-Este trabajo se enmarca en la agenda climática internacional. El sector agro-alimentario es uno de los principales emisores de gases de efecto invernadero a nivel global, y los países de América Latina y el Caribe —mayoría miembros del BID— enfrentan el desafío de conciliar el desarrollo agropecuario con los compromisos de reducción de emisiones asumidos en acuerdos como el Acuerdo de París.
-
-Contar con modelos predictivos robustos y reproducibles es un insumo clave para organismos multilaterales, ministerios de agricultura y agencias de medio ambiente de la región.
-
----
-
-## Stack tecnológico
-
-`pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` · `plotly`
-
----
-
-## Archivo
-
-| Archivo | Descripción |
-|---------|-------------|
-| `MI_CO2__4_.ipynb` | Notebook principal con el análisis completo |
-
----
-
-## Cómo ejecutar
-
-El notebook fue desarrollado en **Google Colab**.
+##  Autor
 
 1. Descargar el dataset desde [Kaggle](https://www.kaggle.com/) (CO2 emissions agro-food)
 2. Subir el archivo a Google Drive
