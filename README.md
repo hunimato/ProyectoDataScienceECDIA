@@ -94,13 +94,13 @@ Contar con modelos predictivos robustos y reproducibles es un insumo clave para 
 | Horizonte de proyección | 2030 |
 
 
-Hallazgos clave:
+**Hallazgos clave:**
 
-Las emisiones agroindustriales en los países BID siguen patrones relativamente estables y estructurados una vez considerados los quiebres estructurales históricos.
-Un modelo lineal regularizado (ElasticNet) superó a los modelos de árbol (Random Forest, Gradient Boosting) en estabilidad temporal, con mayor R² y menor RMSE, siendo más adecuado para proyecciones de largo plazo.
-Las emisiones están altamente concentradas geográficamente: un grupo reducido de países explica la mayor parte del total regional, con Brasil como principal contribuyente proyectado a 2030.
-Las fuentes de emisión con mayor co-movimiento son: procesamiento de alimentos, transporte, consumo doméstico, retail y uso de energía en campo — lo que sugiere que responden a un driver económico común.
-Bajo un escenario de mayor integración comercial MERCOSUR-UE, se proyecta un aumento de emisiones concentrado en los países de mayor escala productiva, con impacto relativo mayor en países pequeños pero con menor peso regional absoluto.
+- Las emisiones agroindustriales en los países BID siguen patrones...
+- Un modelo lineal regularizado (ElasticNet) superó...
+- Las emisiones están **altamente concentradas geográficamente**...
+- Las fuentes de emisión con mayor co-movimiento son...
+- Bajo un escenario de mayor integración comercial MERCOSUR-UE...
 
 
 
