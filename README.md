@@ -17,7 +17,7 @@ Este repositorio contiene **3 proyectos independientes**, cada uno en su propia 
 
 ---
 
-## Rama: `feature/market-basket`
+## Rama: `/market-basket`
 ### Market Basket Analysis — UK Retail (2010–2011)
 
 **Equipo:** Hugo Martínez · Jeasmine Nahui · Leticia Colombo · Valentina Ghan
@@ -36,7 +36,7 @@ Análisis exploratorio completo sobre **522.065 transacciones** de un minorista 
 
 ---
 
-## Rama: `feature/co2-emissions`
+## Rama: `/co2-emissions`
 ### CO₂ Emissions Prediction — Agro-food Sector (BID Countries)
 
 **Equipo:** Hugo Martínez · Andrea Aranda · Yuri Biardo
@@ -55,7 +55,7 @@ Análisis y predicción de emisiones de CO₂ del sector agro-alimentario en pa�
 
 ---
 
-## Rama: `feature/no-show-prediction`
+## Rama: `/no-show-prediction`
 ### Medical Appointment No-Show Prediction — XGBoost
 
 **Autor:** Hugo Martínez Tornaria
